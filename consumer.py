@@ -26,12 +26,7 @@ def distance(lati1, long1, lati2, long2):
 
 
 for message in consumer:
-    print ("%s:%d:%d: key=%s value=%s" % (message.topic, message.partition,
-                                          message.offset, message.key,
-                                          message.value))
+    print ("%s:%d:%d: key=%s value=%s" % (message.topic, message.partition, message.offset, message.key, message.value))
     distancia = distance(lat, lon, message.value['latitud'], message.value['longitud']
+    print(distancia)
                          
-                         if True:
-                            producer.send('Sirven', {'Direccion' : message.value['direccion'], 'Distancia' : distanica, 'Precio por minuto' : message.value['tasaCobro']});
-
-
