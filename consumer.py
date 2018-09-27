@@ -29,7 +29,8 @@ for message in consumer:
     print ("%s:%d:%d: key=%s value=%s" % (message.topic, message.partition,
                                           message.offset, message.key,
                                           message.value))
-    if distance(lat, lon, message.value['latitud'], message.value['longitud']) <= dist:
-        producer.send('Sirven', {'direccion' : message.value['direccion'], 'distancia' : distanica, 'tasaCobro' : message.value['tasaCobro']});
+    distancia = distance(lat, lon, message.value['latitud'], message.value['longitud'])
+    if distancia <= dist:
+        producer.send('Sirven', {'direccion' : message.value['direccion'], 'distancia' : distancia, 'tasaCobro' : message.value['tasaCobro']});
 
 
