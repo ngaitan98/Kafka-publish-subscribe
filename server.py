@@ -15,10 +15,4 @@ for message in consumer:
     print ("%s:%d:%d: key=%s value=%s" % (message.topic, message.partition,
                                           message.offset, message.key,
                                           message.value))
-    if message.value['value'] <= 5:
-        producer.send('promedio', {'time': time.strftime("%X"), 'measurement': 'Sirve', 'value': 1, 'unit': 'Boolean', 'place': 'Current pos'})
-        producer.flush()
-    else:
-        producer.send('promedio', {'time': time.strftime("%X"), 'measurement': 'Sirve', 'value': 0, 'unit': 'Boolean', 'place': 'Current pos'})
-        producer.flush()
 
