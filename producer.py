@@ -14,7 +14,7 @@ while i != 0:
     lat = round(uniform(4615, 4701))/1000
     id_duenio = int(round(uniform(1, 20000),0))
     tasaCobro = uniform(70,140)
-    producer.send('Parqueaderos', {'id': id , 'nombre': nombre, 'ciudad': 'Bogota','dimesiones' : dimensiones, 'direccion' : 'TODO', 'ocupado' : 0, 'latitud': lat, 'longitud': lon, 'id_duenio': id_duenio, 'tasaCobro' : tasaCobro})
+    producer.send('Parqueaderos', {'id': id , 'nombre': nombre, 'ciudad': 'Bogota','dimensiones' : dimensiones, 'direccion' : 'TODO', 'ocupado' : 0, 'latitud': lat, 'longitud': lon, 'id_duenio': id_duenio, 'tasaCobro' : tasaCobro})
     producer.flush()
     time.sleep(1)
     i -= 1
