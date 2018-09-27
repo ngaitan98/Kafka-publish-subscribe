@@ -14,7 +14,7 @@ while i != 10:
     lat = round(uniform(74047, 74119),1)/1000
     lon = round(uniform(4615, 4701),1)/1000
     id_duenio = round(uniform(1, 20000),1)
-    producer.send('Parqueaderos', {'id': id , 'nombre': nombre, 'dimesiones' : dimensiones, 'direccion' : 'Calle 107a #6c-53', 'ocupado' : 0, 'latitud': lat, 'longitud': lon, 'id_duenio': id_duenio})
+    producer.send('Parqueaderos', {'id': id , 'nombre': nombre, 'dimesiones' : dimensiones, 'direccion' : 'TODO', 'ocupado' : 0, 'latitud': lat, 'longitud': lon, 'id_duenio': id_duenio})
     producer.flush()
     time.sleep(5)
     i -= 10

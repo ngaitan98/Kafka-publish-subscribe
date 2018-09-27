@@ -29,6 +29,7 @@ for message in consumer:
     print ("%s:%d:%d: key=%s value=%s" % (message.topic, message.partition,
                                           message.offset, message.key,
                                           message.value))
-    print(distance(lat, lon, message.value['latitud'], message.value['longitud']))
+    if distance(lat, lon, message.value['latitud'], message.value['longitud']) <= dist:
+        consumer.send('Sirven', message.values);
 
 
