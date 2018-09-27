@@ -5,7 +5,7 @@ from random import uniform
 
 consumer = KafkaConsumer(bootstrap_servers=['172.24.41.207:8081'],
                          value_deserializer=lambda m: json.loads(m.decode('utf-8')))
-consumer.subscribe(pattern='.*.-piso2-.*')
+consumer.subscribe(pattern='Parqueaderos')
 
 producer = KafkaProducer(bootstrap_servers=['172.24.41.207:8081'],
                          value_serializer=lambda v: json.dumps(v).encode('utf-8'))
