@@ -30,7 +30,7 @@ for message in consumer:
                                           message.offset, message.key,
                                           message.value))
     distancia = distance(lat, lon, message.value['latitud'], message.value['longitud']
-    if distancia <= dist:
-                         producer.send('Sirven', {'Direccion' : message.value['direccion'], 'Distancia' : distanica, 'Precio por minuto' : message.value['tasaCobro']});
+    if distancia < dist:
+        producer.send('Sirven', {'Direccion' : message.value['direccion'], 'Distancia' : distanica, 'Precio por minuto' : message.value['tasaCobro']});
 
 
