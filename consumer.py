@@ -12,14 +12,6 @@ producer = KafkaProducer(bootstrap_servers=['172.24.41.207:8081'],
 lat = round(uniform(74047, 74119),1)/1000
 lon = round(uniform(4615, 4701),1)/1000
 dist = 2
-for message in consumer:
-    print ("%s:%d:%d: key=%s value=%s" % (message.topic, message.partition,
-                                          message.offset, message.key,
-                                          message.value))
-    print(distance(lat, lon, message.value['latitud'], message.value['longitud']))
-
-
-
 def distance(lati1, long1, lati2, long2):
     lat1, lon1 = lati1, long1
     lat2, lon2 = lati2, long2
@@ -31,5 +23,12 @@ def distance(lati1, long1, lati2, long2):
     c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
     d = radius * c
     return d
+
+
+for message in consumer:
+    print ("%s:%d:%d: key=%s value=%s" % (message.topic, message.partition,
+                                          message.offset, message.key,
+                                          message.value))
+    print(distance(lat, lon, message.value['latitud'], message.value['longitud']))
 
 
