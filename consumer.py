@@ -1,8 +1,7 @@
-import json, time
+import json, time, math
 from kafka import KafkaConsumer, KafkaProducer
 from kafka.errors import KafkaError
 from random import uniform
-import gpxpy.geo
 
 consumer = KafkaConsumer(bootstrap_servers=['172.24.41.207:8081'],
                          value_deserializer=lambda m: json.loads(m.decode('utf-8')))
@@ -17,6 +16,23 @@ for message in consumer:
     print ("%s:%d:%d: key=%s value=%s" % (message.topic, message.partition,
                                           message.offset, message.key,
                                           message.value))
-    print(gpxpy.geo.haversine_distance(lat, lon, message.value['latitud'], message.value['longitud']))
+    print(distance(lat, lon, message.value['latitud'], message.value['longitud']))
+
+
+
+def distance(lati1, long1, lati2, long2):
+    lat1, lon1 = lati1, long1
+    lat2, lon2 = lati2, long2
+    radius = 6373 #
+    
+    dlat = math.radians(lat2 - lat1)
+    dlon = math.radians(lon2 - lon1)
+    a = (math.sin(dlat/2) * math.sin(dlat/2) +
+         math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) *
+         math.sin(dlon/2) * math.sin(dlon/2))
+        c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+        d = radius * c
+         
+    return d
 
 
