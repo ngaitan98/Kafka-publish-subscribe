@@ -1,4 +1,4 @@
-mport json, time
+import json, time
 from kafka import KafkaConsumer, KafkaProducer
 from kafka.errors import KafkaError
 from random import uniform
@@ -21,5 +21,5 @@ for message in consumer:
         producer.flush()
     else:
         producer.send('promedio', {'time': time.strftime("%X"), 'measurement': 'Sirve', 'value': 0, 'unit': 'Boolean', 'place': 'Current pos'})
-        producer.flush()
+                                              producer.flush()
 
