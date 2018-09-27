@@ -5,8 +5,8 @@ from random import uniform
 
 producer = KafkaProducer(bootstrap_servers=['172.24.41.207:8081'],
                          value_serializer=lambda v: json.dumps(v).encode('utf-8'))
-i = 0
-while i != 10:
+i = 50
+while i != 0:
     id = round(uniform(1, 20000),0)
     nombre = "El parqueadero aleta" + str(id)
     ciudad = "Bogotá"
@@ -17,6 +17,6 @@ while i != 10:
     tasaCobro = round(uniform(70,140),0)
     producer.send('Parqueaderos', {'id': id , 'nombre': nombre, 'dimesiones' : dimensiones, 'direccion' : 'TODO', 'ocupado' : 0, 'latitud': lat, 'longitud': lon, 'id_duenio': id_duenio, 'tasaCobro' : tasaCobro})
     producer.flush()
-    time.sleep(5)
-    i -= 10
+    time.sleep(1)
+    i -= 1
 
