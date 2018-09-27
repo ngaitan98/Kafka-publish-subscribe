@@ -10,8 +10,7 @@ consumer.subscribe(pattern='.*.-piso2-.*')
 producer = KafkaProducer(bootstrap_servers=['172.24.41.207:8081'],
                          value_serializer=lambda v: json.dumps(v).encode('utf-8'))
 
-dist = 5
-
+dist = 2
 for message in consumer:
     print ("%s:%d:%d: key=%s value=%s" % (message.topic, message.partition,
                                           message.offset, message.key,
