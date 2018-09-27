@@ -30,6 +30,6 @@ for message in consumer:
                                           message.offset, message.key,
                                           message.value))
     if distance(lat, lon, message.value['latitud'], message.value['longitud']) <= dist:
-        consumer.send('Sirven', message.values);
+        producer.send('Sirven', message.values);
 
 
