@@ -21,5 +21,5 @@ for message in consumer:
         producer.flush()
     else:
         producer.send('promedio', {'time': time.strftime("%X"), 'measurement': 'Sirve', 'value': 0, 'unit': 'Boolean', 'place': 'Current pos'})
-                                              producer.flush()
+        producer.flush()
 
