@@ -23,16 +23,13 @@ for message in consumer:
 def distance(lati1, long1, lati2, long2):
     lat1, lon1 = lati1, long1
     lat2, lon2 = lati2, long2
-    radius = 6373 #
+    radius = 6373
     
     dlat = math.radians(lat2 - lat1)
     dlon = math.radians(lon2 - lon1)
-    a = (math.sin(dlat/2) * math.sin(dlat/2) +
-         math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) *
-         math.sin(dlon/2) * math.sin(dlon/2))
-        c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
-        d = radius * c
-         
+    a = (math.sin(dlat/2) * math.sin(dlat/2) + math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * math.sin(dlon/2) * math.sin(dlon/2))
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+    d = radius * c
     return d
 
 
