@@ -13,8 +13,8 @@ while i != 1:
     nombre = nombres[int(round(uniform(0,len(nombres) - 1),0))] + ' ' +  apellidos[int(round(uniform(0,len(apellidos) - 1),0))]
     documento = str(i*100)
     usuario = str('.'.join(nombre.split())+str(i))
-    contrasenia = str(nombre[0:5] + str(123))+edad+usuario[0:2]
     edad = int(round(uniform(18,60),0))
+    contrasenia = str(nombre[0:5] + str(123))+edad%43+usuario[0:2]
     producer.send('Parqueaderos', {'id': i, 'nombre' : nombre, 'documento' : documento, 'usuario' : usuario, 'contrasena': contrasenia, 'edad': edad})
     producer.flush()
     i -= 1
