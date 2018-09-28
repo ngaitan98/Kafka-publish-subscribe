@@ -13,4 +13,4 @@ while i != 0:
     edad = int(round(uniform(18,60),0))
     r = requests.post("http://172.24.41.208:8082/nidoo/clientelist", data={'id':id, 'nombre' : nombre, 'documento' : documento, 'usuario' : usuario, 'contrasenia': contrasenia, 'edad': edad})
     i-=1
-    print(r.headers)
+    print(r.status_code)
