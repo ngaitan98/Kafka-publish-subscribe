@@ -1,6 +1,8 @@
 import requests
 import json, time
 from random import uniform
+from kafka import KafkaConsumer
+
 consumer = KafkaConsumer('Parqueaderos',
                          bootstrap_servers=['172.24.41.207:8081'],
                          value_deserializer=lambda m: json.loads(m.decode('utf-8')))
