@@ -1,7 +1,7 @@
 import requests
 import json, time
 from random import uniform
-i = 5000
+i = 1
 nombres = ['Juan','Julian','Andres','Nicolas','Manuel','Franciso','Leonel']
 apellidos = ['Gaitan', 'Muñoz', 'Esobar', 'Bello', 'Lugo', 'Naranjo', 'Alvarez']
 while i != 0:
