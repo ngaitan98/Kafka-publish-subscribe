@@ -3,7 +3,7 @@ import json, time
 from random import uniform
 i = 1
 nombres = ['Juan','Julian','Andres','Nicolas','Manuel','Franciso','Leonel']
-apellidos = ['Gaitan', 'Muñoz', 'Esobar', 'Bello', 'Lugo', 'Naranjo', 'Alvarez']
+apellidos = ['Gaitan', 'Munios', 'Esobar', 'Bello', 'Lugo', 'Naranjo', 'Alvarez']
 while i != 0:
     id = i
     nombre = nombres[int(round(uniform(0,len(nombres) - 1),0))] + apellidos[int(round(uniform(0,len(apellidos) - 1),0))]
