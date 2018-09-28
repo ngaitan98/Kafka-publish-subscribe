@@ -15,7 +15,7 @@ while i != 0:
     usuario = '.'.join(nombre.split())+str(i)
     contrasenia = nombre[0:5] + str(123)
     edad = int(round(uniform(18,60),0))
-    producer.send('Parqueaderos', {'id': '1', 'nombre' : 'Nicolas Gaitan', 'documento' : 1018505086, 'usuario' : 'n.gaitan', 'contrasenia': 'Greenday1', 'tipo': 'tipo'})
+    producer.send('Parqueaderos', {'id': '1', 'nombre' : 'Nicolas Gaitan', 'documento' : '1018505086', 'usuario' : 'n.gaitan', 'contrasenia': 'Greenday1', 'tipo': 'tipo'})
     producer.flush()
     i -= 1
 
