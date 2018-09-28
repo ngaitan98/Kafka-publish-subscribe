@@ -1,8 +1,5 @@
 import requests
 import json, time
-from kafka import KafkaConsumer, KafkaProducer
-from kafka.errors import KafkaError
-from random import uniform
 
 i,j = 5000,0
 while i != 0:
@@ -10,4 +7,6 @@ while i != 0:
     if r.status_code != 201:
         i += 1
         print(i)
+    else:
+        print("Success")
     i-=1
