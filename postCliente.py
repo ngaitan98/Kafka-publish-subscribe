@@ -4,8 +4,6 @@ import json, time
 
 from random import uniform
 
-
-
 i,j = 0,5000
 
 Nombres=['Nicolás','Juan','Manuel','Andrés','Francisco','Leonel','Eldete','Bellosapo','Elchiconavi', 'Elchicogym']
@@ -17,7 +15,7 @@ while j != 0:
     if r.status_code != 201:
         i += 1
         print(i)
-    print(j)
+    print(r)
     j-=1
                                           
                                           
