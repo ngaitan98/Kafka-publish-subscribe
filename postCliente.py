@@ -12,6 +12,6 @@ while i != 0:
     contrasenia = nombre[0:5] + str(123)
     edad = int(round(uniform(18,60),0))
     print(id, nombre, documento, usuario, contrasenia, edad)
-    r = requests.post("http://34.219.60.225:8000/nidoo/clientelist", data={'nombre' : 'Nicolas Gaitan', 'documento' : 1018505086, 'usuario' : 'n.gaitan', 'contrasenia': 'Greenday1', 'edad': 20})
+    r = requests.post("http://34.219.60.225:8000/nidoo/clientelist", data={'nombre' : str(nombre), 'documento' : documento, 'usuario' : usuario, 'contrasena': contrasenia, 'edad': edad})
     i-=1
     print(r.status_code)
