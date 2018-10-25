@@ -17,6 +17,7 @@ while j != 0:
     if r.status_code != 201:
         i += 1
         print(i)
+    print(j)
     j-=1
                                           
                                           
